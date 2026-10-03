@@ -1,0 +1,180 @@
+# Audio — Multilingual Text-to-Speech System
+
+A multilingual Text-to-Speech (TTS) system built around **Piper TTS** and ONNX voice models, with support for English and Persian speech synthesis.
+
+The project is organized into separate frontend, backend, worker, and model components to keep the user interface, API layer, audio processing, and voice models isolated from each other.
+
+---
+
+## Features
+
+* Text-to-Speech (TTS) generation
+* English speech synthesis
+* Persian speech synthesis
+* Local ONNX voice models
+* Piper TTS integration
+* Separate frontend and backend architecture
+* Dedicated worker for audio processing
+* Extensible model directory for adding additional voices
+
+---
+
+## Project Architecture
+
+The project is divided into four main components:
+
+```text
+Audio/
+├── backend/
+├── frontend/
+├── models/
+└── worker/
+```
+
+### Frontend
+
+The `frontend` component provides the user interface.
+
+Its responsibilities include:
+
+* Accepting text input
+* Selecting the required language/model
+* Sending TTS requests to the backend
+* Receiving generated audio
+* Playing or providing the generated audio to the user
+
+### Backend
+
+The `backend` component provides the application/API layer.
+
+Its responsibilities include:
+
+* Receiving requests from the frontend
+* Validating input
+* Handling TTS requests
+* Communicating with the worker
+* Returning generated audio or the corresponding result
+
+### Worker
+
+The `worker` component is responsible for the actual audio generation process.
+
+The general processing flow is:
+
+```text
+User Text
+    │
+    ▼
+  Backend
+    │
+    ▼
+  Worker
+    │
+    ▼
+ Piper TTS
+    │
+    ▼
+ ONNX Voice Model
+    │
+    ▼
+ Generated Audio
+```
+
+Separating the worker from the backend allows audio generation to be handled independently from the API layer.
+
+### Models
+
+The `models` directory contains the Piper voice models used by the application.
+
+Each Piper voice normally consists of an ONNX model and its corresponding JSON configuration:
+
+```text
+model.onnx
+model.onnx.json
+```
+
+---
+
+# Installation
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/dariushmonajem/Audio.git
+cd Audio
+```
+
+---
+
+## 2. Prepare the Models Directory
+
+Create the models directory if it does not already exist:
+
+```bash
+mkdir -p models
+```
+
+The final project structure should look similar to:
+
+```text
+Audio/
+├── backend/
+├── frontend/
+├── worker/
+└── models/
+    ├── en_US-ljspeech-high.onnx
+    ├── en_US-ljspeech-high.onnx.json
+    ├── fa_IR-mana-medium.onnx
+    └── fa_IR-mana-medium.onnx.json
+```
+
+---
+
+# Download Piper Models
+
+The application uses Piper ONNX voice models for speech synthesis.
+
+## English — High Quality
+
+The English voice model is:
+
+```text
+en_US-ljspeech-high
+```
+
+Download the following files:
+
+* [en_US-ljspeech-high.onnx](https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ljspeech/high/en_US-ljspeech-high.onnx)
+* [en_US-ljspeech-high.onnx.json](https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ljspeech/high/en_US-ljspeech-high.onnx.json)
+
+Place both files inside:
+
+```text
+models/
+```
+
+The resulting structure should be:
+
+```text
+models/
+├── en_US-ljspeech-high.onnx
+└── en_US-ljspeech-high.onnx.json
+```
+
+Source:
+
+[Rhasspy Piper Voices — English US LJSpeech High](https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high)
+
+---
+
+## Persian
+
+The Persian voice model is:
+
+```text
+fa_IR-mana-medium
+```
+
+The model is provided by:
+
+[MahtaFetrat/Mana-Persian-Piper](https://h)
