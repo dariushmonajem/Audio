@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تبدیل کتاب به صدا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 تبدیل کتاب به کتاب صوتی</h1>
+        <p class="subtitle">فایل PDF خود را آپلود کنید یا متن را مستقیماً وارد کنید</p>
+
+        <!-- ========== بخش آپلود ========== -->
+        <div class="upload-section">
+            <h3>📤 آپلود فایل PDF</h3>
+            <input type="file" id="fileInput" accept=".pdf">
+            <button id="uploadBtn">آپلود و تبدیل</button>
+            <div id="uploadStatus" class="status"></div>
+        </div>
+
+        <hr>
+
+        <!-- ========== بخش متن ========== -->
+        <div class="text-section">
+            <h3>✏️ یا متن را وارد کنید</h3>
+            <textarea id="textInput" rows="5" dir="ltr" placeholder="متن خود را اینجا بنویسید..."></textarea>
+            <button id="convertBtn">🔊 تبدیل به صدا</button>
+            <button id="clearBtn">🗑️ پاک کردن</button>
+        </div>
+
+        <!-- ========== وضعیت و پلیر ========== -->
+        <div id="status" class="status"></div>
+        <div id="audioContainer" class="audio-container" style="display:none;">
+            <hr>
+            <h3>🎵 فایل صوتی</h3>
+            <audio id="audioPlayer" controls style="width:100%;"></audio>
+            <br>
+            <a id="downloadLink" download="speech.wav">📥 دانلود فایل</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

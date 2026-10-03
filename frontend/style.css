@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ========== بخش آپلود ========== */
+.upload-section {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 2px dashed #94a3b8;
+}
+
+.upload-section h3 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+.upload-section input[type="file"] {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.upload-section button {
+    background: #22c55e;
+    color: white;
+}
+
+.upload-section button:hover {
+    background: #16a34a;
+}
+
+/* ========== بخش متن ========== */
+.text-section {
+    margin: 20px 0;
+}
+
+.text-section textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: 0.2s;
+}
+
+.text-section textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* ========== وضعیت ========== */
+.status {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    min-height: 50px;
+}
+
+.status.loading {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.status.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+body {
+    font-family: 'Tahoma', 'Segoe UI', system-ui, sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+button {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#convertBtn {
+    background: #3b82f6;
+    color: white;
+    margin-left: 10px;
+}
+
+#convertBtn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+#convertBtn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+#clearBtn {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+#clearBtn:hover {
+    background: #cbd5e1;
+}
+
+.status {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    min-height: 50px;
+}
+
+.status.loading {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.status.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.audio-container {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.audio-container h3 {
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+#downloadLink {
+    display: inline-block;
+    margin-top: 12px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#downloadLink:hover {
+    text-decoration: underline;
+}
